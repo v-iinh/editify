@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Editify</title>
+    <link rel="stylesheet" href="code_editor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="assets/favicon.ico" rel="icon">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href=""><i class="fas fa-code"></i> Code</a></li>
+            <li><a href=""><i class="fas fa-image"></i> Images</a></li>
+            <li><a href=""><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href=""><i class="fas fa-microphone"></i> Audio</a></li>
+            <li><a href=""><i class="fas fa-file"></i> Text</a></li>
+        </ul>
+    </nav>
+    <div class="toolbar">
+        <ul>
+            <li><button onclick="loadFileContent()">Run</button></li>
+            <li><button onclick="showTextArea('html')">HTML</button></li>
+            <li><button onclick="showTextArea('css')">CSS</button></li>
+            <li><button onclick="showTextArea('js')">Javascript</button></li>
+            <button onclick="document.getElementById('fileInput').click();">Import</button>
+            <input type="file" id="fileInput" accept=".html, .css, .js" style="display: none;" onchange="handleFile()">
+            <li><button onclick="exportFiles()">Export</button></li>
+        </ul>
+    </div>
+    <div>
+        <textarea name="html" id="html" style="display: none;"></textarea>
+    </div>
+    <div>
+        <textarea name="css" id="css" style="display: none;"></textarea>
+    </div>
+    <div>
+        <textarea name="js" id="js" style="display: none;"></textarea>
+    </div>
+    <div>
+        <iframe src="" id="output"></iframe>
+    </div>
+    <script src="code_editor.js"></script>
+</body> 
+</html>
