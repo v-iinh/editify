@@ -1,4 +1,5 @@
 function showTextArea(language) {
+    document.getElementById('image').style.display = 'none';
     document.querySelectorAll('textarea').forEach(textarea => {
         textarea.style.display = 'none';
         document.getElementById("output").style.display = 'none';
@@ -72,7 +73,7 @@ function exportFiles() {
     `;
 
     const blob = new Blob([combinedContent], { type: 'text/html' });
-    const confirmed = window.confirm("Press OK to Confirm Download");
+    const confirmed = window.confirm("Press OK to Download File");
     if (confirmed) {
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -89,6 +90,7 @@ function getFileType(fileName) {
 }
 
 function loadFileContent() {
+    document.getElementById('image').style.display = 'none';
     document.getElementById("output").style.display = 'flex';
     run();
 }

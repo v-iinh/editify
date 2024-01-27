@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="editor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../code/editor.html"><i class="fas fa-code"></i> Code</a></li>
+            <li><a href=""><i class="fas fa-image"></i> Images</a></li>
+            <li><a href=""><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href=""><i class="fas fa-microphone"></i> Audio</a></li>
+            <li><a href=""><i class="fas fa-file"></i> Text</a></li>
+        </ul>
+    </nav>
+    <div class="toolbar">
+        <ul>
+            <div class="filter">
+                <div class="options">
+                    <button id="emptySlider" class="active" onclick="showSlider()" style="display: none;">Slider</button>
+                    <button id="brightness" onclick="showSlider()">Brightness</button>
+                    <button id="saturation" onclick="showSlider()">Saturation</button>
+                    <button id="inversion" onclick="showSlider()">Inversion</button>
+                    <button id="grayscale" onclick="showSlider()">Grayscale</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="reset-filter" onclick="hideSlider()">Reset</button>
+                <div class="row">
+                    <input type="file" class="file-input" accept="image/*" hidden>
+                    <button class="choose-img" onclick="hideSlider()">Import</button>
+                    <button class="save-img" onclick="hideSlider()">Export</button>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div class="rotate">
+        <div class="optionsRotate">
+            <button id="left" onclick="hideSlider()"><i class="fa-solid fa-rotate-left"></i></button>
+            <button id="right" onclick="hideSlider()"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="horizontal" onclick="hideSlider()"><i class='bx bx-reflect-vertical'></i></button>
+            <button id="vertical" onclick="hideSlider()"><i class='bx bx-reflect-horizontal' ></i></button>
+        </div>
+    </div>
+    <div id="slider" class="slider">
+        <div class="filter-info">
+            <p class="name"></p>
+            <p class="value"></p>
+        </div>
+        <input type="range" value="100" min="0" max="200">
+    </div>
+    <div class="preview-img">
+        <img src="../assets/logo.png">
+    </div>
+    <script src="editor.js"></script>
+  </body>
+</html>

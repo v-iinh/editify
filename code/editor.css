@@ -97,6 +97,23 @@ textarea:focus {
     outline: none;
 }
 
+.preview-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    height: 89.75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .preview-img img {
+    max-width: 85%;
+    max-height: 85%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
 *::-webkit-scrollbar {
     width: 16px;
 }
