@@ -1,5 +1,4 @@
 function showTextArea(language) {
-    document.getElementById('image').style.display = 'none';
     document.querySelectorAll('textarea').forEach(textarea => {
         textarea.style.display = 'none';
         document.getElementById("output").style.display = 'none';
@@ -90,7 +89,13 @@ function getFileType(fileName) {
 }
 
 function loadFileContent() {
-    document.getElementById('image').style.display = 'none';
     document.getElementById("output").style.display = 'flex';
     run();
 }
+
+document.body.addEventListener('click', function() {
+    var image = document.getElementById('image');
+    if (image.style.display !== 'none') {
+        image.style.display = 'none';
+    }
+});
