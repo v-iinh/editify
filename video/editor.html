@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Video Editor</title>
+    <link rel="stylesheet" href="editor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../code/editor.html"><i class="fas fa-code"></i> Code</a></li>
+            <li><a href="../image/editor.html"><i class="fas fa-image"></i> Images</a></li>
+            <li><a href=""><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href=""><i class="fas fa-microphone"></i> Audio</a></li>
+            <li><a href="../text/editor.html"><i class="fas fa-file"></i> Text</a></li>
+        </ul>
+    </nav>
+    <div class="toolbar">
+        <ul>
+            <div class="filter">
+                <div class="options">
+                    <button onclick="slowDown()">Slow Down</button>
+                    <button onclick="speedUp()">Speed Up</button>
+                    <button onclick="toggleSound()">Toggle Sound</button>
+                    <button onclick="greenScreen()">Remove Green</button>
+                    <div class="row">
+                        <input type="file" class="file-input" accept="video/*" hidden onchange="importMedia(event)">
+                        <button class="choose-vid" onclick="document.querySelector('.file-input').click()">Import</button>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div>
+        <div id="area" class="area"></div>
+    </div>
+    <div class="preview-img" id="image">
+        <img src="../assets/logo.png">
+    </div>
+    <script src="editor.js"></script>
+  </body>
+</html>
