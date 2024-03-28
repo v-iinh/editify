@@ -3,6 +3,7 @@ document.body.addEventListener('click', function() {
     if (image.style.display !== 'none') {
         image.style.display = 'none';
     }
+    document.getElementById('area').style.display = 'flex';
 });
 
 function importMedia(event) {
